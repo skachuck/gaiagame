@@ -57,7 +57,7 @@ var Path = {
 	openPath: function() {
 		Path.init();
 		Engine.event('progress', 'path');
-		Notifications.notify(Room, _('the compass points ' + World.dir));
+		//Notifications.notify(Room, _('the compass points ' + World.dir));
 	},
 	
 	getWeight: function(thing) {
@@ -234,12 +234,12 @@ var Path = {
 	updateBagSpace: function(currentBagCapacity) {
 		// Update bagspace
 		$('#bagspace').text(_('free {0}/{1}', Math.floor(Path.getCapacity() - currentBagCapacity) , Path.getCapacity()));
-
-		if(Path.outfit['cured meat'] > 0) {
-			Button.setDisabled($('#embarkButton'), false);
-		} else {
-			Button.setDisabled($('#embarkButton'), true);
-		}
+                Button.setDisabled($('#embarkButton'), false);
+		//if(Path.outfit['cured meat'] > 0) {
+		//	Button.setDisabled($('#embarkButton'), false);
+		//} else {
+		//	Button.setDisabled($('#embarkButton'), true);
+		//}
 
 	},
 	

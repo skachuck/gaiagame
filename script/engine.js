@@ -2,7 +2,7 @@
 	var Engine = window.Engine = {
 
 		SITE_URL: encodeURIComponent("http://adarkroom.doublespeakgames.com"),
-		VERSION: 1.3,
+		VERSION: 0.1,
 		MAX_STORE: 99999999999999,
 		SAVE_DISPLAY: 30 * 1000,
 		GAME_OVER: false,
@@ -72,8 +72,8 @@
 
 		options: {
 			state: null,
-			debug: false,
-			log: false,
+			debug: true,
+			log: true,
 			dropbox: false,
 			doubleTime: false
 		},
@@ -207,7 +207,7 @@
 			if(typeof $SM.get('stores.wood') != 'undefined') {
 				Outside.init();
 			}
-			if($SM.get('stores.compass', true) > 0) {
+			if(true) {//$SM.get('stores.compass', true) > 0) {
 				Path.init();
 			}
 			if($SM.get('features.location.spaceShip')) {
@@ -845,6 +845,7 @@ function scrollByX(elem, x){
 //create jQuery Callbacks() to handle object events
 $.Dispatch = function( id ) {
 	var callbacks, topic = id && Engine.topics[ id ];
+        // if id is not registered in Engine.topics, register it
 	if ( !topic ) {
 		callbacks = jQuery.Callbacks();
 		topic = {
@@ -856,6 +857,7 @@ $.Dispatch = function( id ) {
 			Engine.topics[ id ] = topic;
 		}
 	}
+        // Return the topic to perform action, e.g., subscribe or publish
 	return topic;
 };
 
