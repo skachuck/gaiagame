@@ -39,7 +39,8 @@ var StateManager = {
 			'outfit',      	// used to temporarily store the items to be taken on the path
 			'config',
 			'wait',			// mysterious wanderers are coming back
-			'cooldown'      // residual values for cooldown buttons
+			'cooldown',      // residual values for cooldown buttons
+                        'ebm'           // energy balance model
 		];
 
 		for(var which in cats) {

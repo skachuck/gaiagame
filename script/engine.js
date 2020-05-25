@@ -203,6 +203,7 @@
 			Notifications.init();
 			Events.init();
 			Room.init();
+                        EBM.init();
 
 			if(typeof $SM.get('stores.wood') != 'undefined') {
 				Outside.init();
